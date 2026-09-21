@@ -254,7 +254,52 @@ footer a[aria-label]:hover svg {
 }
 
 /* ---------------------------------------------------------
-   16. Print styles
+   16. Hero background slideshow
+   --------------------------------------------------------- */
+.hero-bg-slideshow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 1.6s ease-in-out, transform 8s ease-out;
+  will-change: opacity, transform;
+}
+
+.hero-bg-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg,
+      rgba(10, 31, 68, 0.86) 0%,
+      rgba(19, 42, 86, 0.78) 50%,
+      rgba(10, 31, 68, 0.9) 100%);
+}
+
+/* Ensure hero content sits above the slideshow */
+#home > .relative,
+#home > a {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------
+   17. Print styles
    --------------------------------------------------------- */
 @media print {
   header,
@@ -278,10 +323,14 @@ footer a[aria-label]:hover svg {
     opacity: 1 !important;
     transform: none !important;
   }
+
+  .hero-bg-slideshow {
+    display: none !important;
+  }
 }
 
 /* ---------------------------------------------------------
-   17. Reduced motion (accessibility)
+   18. Reduced motion (accessibility)
    --------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -305,10 +354,15 @@ footer a[aria-label]:hover svg {
   a[aria-label="Chat on WhatsApp"] {
     animation: none !important;
   }
+
+  .hero-bg-slide {
+    transition: opacity 0.4s ease !important;
+    transform: none !important;
+  }
 }
 
 /* ---------------------------------------------------------
-   18. Responsive tweaks
+   19. Responsive tweaks
    --------------------------------------------------------- */
 @media (max-width: 640px) {
   #backTop {
@@ -330,7 +384,7 @@ footer a[aria-label]:hover svg {
 }
 
 /* ---------------------------------------------------------
-   19. Utility: text balance for headings
+   20. Utility: text balance for headings
    --------------------------------------------------------- */
 h1, h2, h3 {
   text-wrap: balance;
