@@ -7,12 +7,15 @@
   <meta name="theme-color" content="#0A1F44" />
   <title>PREPSA — Prescious Prime Stars Academy | Arise & Shine</title>
 
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -34,21 +37,20 @@
             floaty:  { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
             shine:   { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
             fadeUp:  { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-            twinkle: { '0%,100%': { opacity: 0.3 }, '50%': { opacity: 1 } },
-            heroZoom:{ '0%': { transform: 'scale(1.05)' }, '100%': { transform: 'scale(1.15)' } }
+            twinkle: { '0%,100%': { opacity: 0.3 }, '50%': { opacity: 1 } }
           },
           animation: {
             floaty:  'floaty 6s ease-in-out infinite',
             shine:   'shine 3s linear infinite',
             fadeUp:  'fadeUp 0.8s ease-out forwards',
-            twinkle: 'twinkle 3s ease-in-out infinite',
-            heroZoom:'heroZoom 8s ease-in-out infinite alternate'
+            twinkle: 'twinkle 3s ease-in-out infinite'
           }
         }
       }
     }
   </script>
 
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
@@ -86,6 +88,7 @@
 <!-- ░░░░ NAVBAR ░░░░ -->
 <header id="navbar" class="sticky top-0 z-50 bg-white/85 backdrop-blur-lg border-b border-royal/5 transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3 group">
       <div class="relative">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-royal to-royal2 flex items-center justify-center shadow-lg shadow-royal/20 group-hover:scale-105 transition">
@@ -99,6 +102,7 @@
       </div>
     </a>
 
+    <!-- Desktop Menu -->
     <ul class="hidden lg:flex items-center gap-7 text-[15px] font-medium">
       <li><a href="#home" class="nav-link text-royal/80 hover:text-royal transition">Home</a></li>
       <li><a href="about.html" class="nav-link text-royal/80 hover:text-royal transition">About</a></li>
@@ -111,7 +115,8 @@
     </ul>
 
     <div class="flex items-center gap-3">
-      <a href="admissions.html" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold text-sm shadow-lg shadow-gold/30 hover:shadow-xl hover:shadow-gold/40 hover:-translate-y-0.5 transition-all">
+      <!-- ✅ Apply Now → School Portal -->
+      <a href="YOUR_SCHOOL_PORTAL_URL_HERE" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold text-sm shadow-lg shadow-gold/30 hover:shadow-xl hover:shadow-gold/40 hover:-translate-y-0.5 transition-all">
         Apply Now
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
@@ -121,6 +126,7 @@
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
   <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-royal/10">
     <ul class="px-6 py-4 space-y-1 text-royal font-medium">
       <li><a href="#home" class="block py-3 border-b border-royal/5">Home</a></li>
@@ -131,47 +137,41 @@
       <li><a href="gallery.html" class="block py-3 border-b border-royal/5">Gallery</a></li>
       <li><a href="news.html" class="block py-3 border-b border-royal/5">News</a></li>
       <li><a href="contact.html" class="block py-3 border-b border-royal/5">Contact</a></li>
-      <li class="pt-3"><a href="admissions.html" class="block text-center py-3 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold">Apply Now</a></li>
+      <!-- ✅ Apply Now → School Portal -->
+      <li class="pt-3"><a href="YOUR_SCHOOL_PORTAL_URL_HERE" target="_blank" rel="noopener" class="block text-center py-3 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold">Apply Now</a></li>
     </ul>
   </div>
 </header>
 
-<!-- ░░░░ HERO (UPDATED: full-bleed image slideshow background) ░░░░ -->
+<!-- ░░░░ HERO (with image background slideshow) ░░░░ -->
 <section id="home" class="relative min-h-[92vh] flex items-center overflow-hidden bg-royal">
 
-  <!-- Background image slideshow -->
-  <div id="heroSlideshow" class="absolute inset-0 overflow-hidden">
-    <div class="hero-slide absolute inset-0 bg-cover bg-center animate-heroZoom"
-         data-hero-slide
-         style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80');"></div>
-    <div class="hero-slide absolute inset-0 bg-cover bg-center animate-heroZoom"
-         data-hero-slide
-         style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80');"></div>
-    <div class="hero-slide absolute inset-0 bg-cover bg-center animate-heroZoom"
-         data-hero-slide
-         style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1920&q=80');"></div>
+  <!-- ✅ NEW: Rotating image background slideshow -->
+  <div class="hero-bg-slideshow" aria-hidden="true">
+    <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-bg-overlay"></div>
   </div>
 
-  <!-- Dark royal overlay so text stays readable & on-brand -->
-  <div class="absolute inset-0 bg-gradient-to-r from-royal/95 via-royal/80 to-royal/40"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-royal/90 via-transparent to-royal/40"></div>
-
-  <!-- Ambient gradient blobs (kept from original) -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-cyan/15 rounded-full blur-3xl"></div>
+  <!-- Ambient gradient blobs (kept for subtle depth, now over the image) -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:1;">
+    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-cyan/20 rounded-full blur-3xl"></div>
     <div class="absolute top-1/3 -right-32 w-[600px] h-[600px] bg-gold/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-royal2/60 rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Decorative stars (kept from original) -->
-  <div class="absolute inset-0 pointer-events-none">
+  <!-- Decorative stars -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:1;">
     <span class="absolute top-24 left-[12%] text-gold text-2xl animate-twinkle">✦</span>
     <span class="absolute top-48 right-[18%] text-gold2 text-xl animate-twinkle" style="animation-delay:.8s">✧</span>
     <span class="absolute bottom-32 left-[22%] text-cyan text-lg animate-twinkle" style="animation-delay:1.4s">✦</span>
     <span class="absolute bottom-40 right-[8%] text-gold text-xl animate-twinkle" style="animation-delay:.4s">✧</span>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-6 py-24 w-full">
-    <div class="text-white max-w-2xl">
+  <div class="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center w-full" style="z-index:2;">
+    <div class="text-white">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-sm mb-6 animate-fadeUp">
         <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
         <span class="text-gold2 font-medium tracking-wide">Admissions Open</span>
@@ -183,31 +183,57 @@
         <span class="bg-gradient-to-r from-gold via-gold2 to-gold bg-clip-text text-transparent bg-[length:200%_auto] animate-shine">Inspiring Excellence.</span>
       </h1>
 
-      <p class="text-white/85 text-lg leading-relaxed mb-10 max-w-xl animate-fadeUp" style="animation-delay:.3s">
+      <p class="text-white/80 text-lg leading-relaxed mb-10 max-w-xl animate-fadeUp" style="animation-delay:.3s">
         At Prescious Prime Stars Academy, we provide a nurturing and purposeful learning environment where children develop academically, morally, socially, emotionally and technologically.
       </p>
 
       <div class="flex flex-wrap gap-4 animate-fadeUp" style="animation-delay:.45s">
-        <a href="admissions.html" class="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold shadow-xl shadow-gold/30 hover:shadow-2xl hover:shadow-gold/50 hover:-translate-y-1 transition-all">
+        <!-- ✅ Apply for Admission → School Portal -->
+        <a href="YOUR_SCHOOL_PORTAL_URL_HERE" target="_blank" rel="noopener" class="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold shadow-xl shadow-gold/30 hover:shadow-2xl hover:shadow-gold/50 hover:-translate-y-1 transition-all">
           Apply for Admission
           <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
+        <!-- ✅ Fixed: Explore Our School → #welcome -->
         <a href="#welcome" class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold hover:bg-white/20 hover:-translate-y-1 transition-all">
           Explore Our School
         </a>
       </div>
     </div>
+
+    <div class="relative hidden lg:block animate-fadeUp" style="animation-delay:.3s">
+      <div class="relative w-full aspect-[4/5] max-w-md mx-auto">
+        <div class="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/40 border-4 border-white/10">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80"
+               alt="Happy PREPSA learners" class="w-full h-full object-cover" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-royal/70 via-transparent"></div>
+        </div>
+
+        <div class="absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl animate-floaty">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-gold text-xl">⭐</div>
+            <div>
+              <div class="text-xs text-royal/60">Our Promise</div>
+              <div class="font-bold text-royal text-sm">Every Child Shines</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl animate-floaty" style="animation-delay:1.5s">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-cyan/15 flex items-center justify-center text-cyan text-xl">🎓</div>
+            <div>
+              <div class="text-xs text-royal/60">Arise &amp; Shine</div>
+              <div class="font-bold text-royal text-sm">Global Leaders</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full border-2 border-dashed border-gold/40 animate-[spin_30s_linear_infinite]"></div>
+      </div>
+    </div>
   </div>
 
-  <!-- Slideshow indicators -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" id="heroDots" aria-hidden="true">
-    <span class="hero-dot w-2 h-2 rounded-full bg-gold"></span>
-    <span class="hero-dot w-2 h-2 rounded-full bg-white/40"></span>
-    <span class="hero-dot w-2 h-2 rounded-full bg-white/40"></span>
-  </div>
-
-  <!-- Scroll cue -->
-  <a href="#welcome" class="hidden md:flex absolute bottom-6 right-6 text-white/50 hover:text-gold transition animate-floaty" aria-label="Scroll down">
+  <a href="#welcome" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 hover:text-gold transition animate-floaty" aria-label="Scroll down" style="z-index:2;">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
   </a>
 </section>
@@ -479,7 +505,8 @@
           Join a community where stars are nurtured, leaders are made, and every child is empowered to arise and shine.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="admissions.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold shadow-xl shadow-gold/30 hover:shadow-2xl hover:-translate-y-1 transition-all">
+          <!-- ✅ Start Application → School Portal -->
+          <a href="YOUR_SCHOOL_PORTAL_URL_HERE" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-gold to-gold2 text-royal font-semibold shadow-xl shadow-gold/30 hover:shadow-2xl hover:-translate-y-1 transition-all">
             Start Application
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
@@ -498,6 +525,7 @@
 
   <div class="relative max-w-7xl mx-auto px-6">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+      <!-- Brand -->
       <div>
         <div class="flex items-center gap-3 mb-5">
           <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold to-gold2 flex items-center justify-center">
@@ -511,6 +539,8 @@
         <p class="text-white/60 leading-relaxed text-sm mb-5">
           "…raising stars, shaping global leaders." A Christian co-educational school in Abeokuta, Ogun State.
         </p>
+
+        <!-- Social Media Icons (real SVGs) -->
         <div class="flex gap-3">
           <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
              class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold hover:text-royal flex items-center justify-center transition">
@@ -527,6 +557,7 @@
         </div>
       </div>
 
+      <!-- Quick Links -->
       <div>
         <h4 class="font-display font-bold text-lg mb-5 text-gold">Quick Links</h4>
         <ul class="space-y-3 text-white/70 text-sm">
@@ -539,6 +570,7 @@
         </ul>
       </div>
 
+      <!-- Contact -->
       <div>
         <h4 class="font-display font-bold text-lg mb-5 text-gold">Get in Touch</h4>
         <ul class="space-y-4 text-white/70 text-sm">
@@ -557,6 +589,7 @@
         </ul>
       </div>
 
+      <!-- Newsletter -->
       <div>
         <h4 class="font-display font-bold text-lg mb-5 text-gold">Stay Updated</h4>
         <p class="text-white/60 text-sm mb-4">Subscribe for news, events and admission updates.</p>
