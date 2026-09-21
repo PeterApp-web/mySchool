@@ -244,7 +244,64 @@
   }
 
   /* =========================================================
-     12. Boot
+     12. Hero background slideshow
+     ========================================================= */
+  function initHeroSlideshow() {
+    const container = document.querySelector('.hero-bg-slideshow');
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.hero-bg-slide');
+    if (!slides.length) return;
+
+    // Respect reduced motion — just show the first slide, no rotation
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    slides[0].classList.add('is-active');
+
+    if (prefersReduced || slides.length < 2) return;
+
+    let current = 0;
+    const INTERVAL = 6000; // 6 seconds per slide
+    let timerId = null;
+
+    const advance = () => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    };
+
+    const start = () => {
+      if (timerId) return;
+      timerId = setInterval(advance, INTERVAL);
+    };
+
+    const stop = () => {
+      if (!timerId) return;
+      clearInterval(timerId);
+      timerId = null;
+    };
+
+    start();
+
+    // Pause when the tab is hidden to save battery / CPU
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    // Pause when hero is off-screen
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) start();
+          else stop();
+        });
+      }, { threshold: 0.05 });
+      heroObserver.observe(container);
+    }
+  }
+
+  /* =========================================================
+     13. Boot
      ========================================================= */
   function boot() {
     initYear();
@@ -257,6 +314,7 @@
     initActiveNav();
     initLazyFallback();
     initExternalLinks();
+    initHeroSlideshow();
   }
 
   if (document.readyState === 'loading') {
