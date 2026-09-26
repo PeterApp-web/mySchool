@@ -393,3 +393,56 @@ h1, h2, h3 {
 p {
   text-wrap: pretty;
 }
+
+/* =========================================================
+   Video Background Hero
+   ========================================================= */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg,
+      rgba(10, 31, 68, 0.82) 0%,
+      rgba(19, 42, 86, 0.72) 50%,
+      rgba(10, 31, 68, 0.88) 100%);
+}
+
+/* Hide video on reduced motion — poster image will show instead */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  .hero-video-wrap {
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Print — hide video */
+@media print {
+  .hero-video-wrap {
+    display: none !important;
+  }
+}
